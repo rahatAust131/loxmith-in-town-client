@@ -1,0 +1,8 @@
+.discover-btn {
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: dimgray;
+}
+.discover-btn:hover {
+    background-color: rgba(250, 200, 73, 0.945);;
+}

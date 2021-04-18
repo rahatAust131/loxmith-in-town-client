@@ -1,0 +1,6 @@
+.welcome-text {
+    border-left: 2px solid tomato;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+}
