@@ -4,6 +4,7 @@ import Navbar from '../../HomePage/Header/Navbar/Navbar';
 import AdminDashboard from '../AdminDashboard/AdminDashboard';
 import UserDashboard from '../UserDashboard/UserDashboard';
 
+
 const Dashboard = () => {
 
     const [admins, setAdmins] = useState([]);
@@ -18,12 +19,19 @@ const Dashboard = () => {
             })
     }, []);
 
+    let userState = 0;
+    const checkAdminOrNot = () => {
+        admins.map(admin => admin.email === loggedInUser.email ? userState = 1
+            : userState = 2);
+    }
+    checkAdminOrNot();
+
     return (
         <div>
             <Navbar />
-            <hr/>
+            <hr />
             {
-                admins.map(admin => admin.email === loggedInUser.email ? <AdminDashboard /> : <UserDashboard />)
+                userState === 1 ? <AdminDashboard /> : <UserDashboard />
             }
         </div>
     );
