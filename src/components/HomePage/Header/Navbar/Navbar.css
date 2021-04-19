@@ -10,4 +10,9 @@
 }
 .logo {
     width: 5%;
+    display: inline-block;
+}
+.navbar-img-link {
+    width: 25%;
+    display: inline-block;
 }

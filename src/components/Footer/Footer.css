@@ -1,0 +1,18 @@
+.footer-top {
+    height: auto;
+    background: url('../../images/footer-bg1.jpg');
+}
+.footer-bottom {
+    height: auto;
+    color: yellowgreen;
+    text-align: center;
+    background: url('../../images/footer-bg2.jpg');
+}
+.text-link {
+    text-decoration: none;
+    margin: 5px 0;
+    padding: 3px;
+}
+.text-link:hover {
+    color: greenyellow;
+}

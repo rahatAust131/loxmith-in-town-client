@@ -4,13 +4,14 @@ import Header from '../Header/Header/Header';
 import OurProcess from '../OurProcess/OurProcess';
 import OurProducts from '../OurProducts/OurProducts';
 import Services from '../Services/Services';
-import Testimonials from '../Testimonials/Testimonials';
+import Reviews from '../Reviews/Reviews';
 import WelcomeSection from '../WelcomeSection/WelcomeSection';
 import './Home.css';
 
 const Home = () => {
+
     return (
-        <div>
+        <div className="container-fluid m-auto">
             <Header />
             <hr />
             <WelcomeSection />
@@ -21,7 +22,7 @@ const Home = () => {
             <hr />
             <OurProcess />
             <hr />
-            <Testimonials />
+            <Reviews />
             <hr />
             <Footer />
         </div>

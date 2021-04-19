@@ -1,0 +1,21 @@
+#service-card-footer {
+    background: none;
+    border: none;
+}
+.order-btn {
+    display: block;
+    width: 70%;
+    margin: auto;
+    background-color: darkorange;
+}
+.service-card {
+    background-color: darkmagenta;
+    color: whitesmoke;
+}
+.service-card h5 {
+    color: cyan;
+}
+.order-btn:hover {
+    background-color: darkorchid;
+    color: whitesmoke;
+}

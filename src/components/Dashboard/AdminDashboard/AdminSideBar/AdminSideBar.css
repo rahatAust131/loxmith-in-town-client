@@ -1,0 +1,17 @@
+.admin-sidebar-container {
+    background: url('../../../../images/admin-dashboard-sidebar-bg.jpg');
+    height: 100%;
+}
+.admin-sidebar-container h5 {
+    color: tomato;
+    padding: 3px;
+}
+.service-btn {
+    display: block;
+    color: seashell;
+    width: 100%;
+    margin: 10px auto;
+}
+.service-btn:hover {
+    background-color: springgreen;
+}

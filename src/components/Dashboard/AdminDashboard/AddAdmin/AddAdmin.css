@@ -1,0 +1,22 @@
+.admin-form-container {
+    background: url('../../../../images/orange-background-with-halftone_1393-315.jpg');
+    display: flex;
+    align-items: center;
+}
+.admin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.admin-form input {
+    width: 50%;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 3px;
+}
+.admin-form input:focus {
+    border: 5px solid aquamarine;
+    border-radius: 5px;
+}

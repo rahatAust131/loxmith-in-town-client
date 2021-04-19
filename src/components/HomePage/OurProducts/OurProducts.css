@@ -1,0 +1,11 @@
+.products-container {
+    background : url('../../../images/product-section-bgjpg.jpg');
+    border-radius: 8px;
+}
+.product-card-footer {
+    border: none;
+    background: none;
+}
+.product-card {
+    background-color: lightgray;
+}

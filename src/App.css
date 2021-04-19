@@ -1,3 +1,17 @@
 .text-golden {
     color: rgba(250, 200, 73, 0.945);
 }
+.dashboard-links {
+    text-decoration: none;
+    width: 100%;
+    color: seagreen;
+    font-weight: 700;
+    font-size: 20px;
+    height: auto;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+.dashboard-links:hover {
+    background-color: greenyellow;
+}

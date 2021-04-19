@@ -2,10 +2,8 @@
     color: darkgray;
     background-image: url('../../../images/process-bg.jpg');
     opacity: 0.9;
-    opacity: 0.9;
-    z-index: -5;
-    margin: auto;
     padding: 5px;
+    height: auto;
 }
 .process-card {
     border-radius: 7px;
@@ -17,4 +15,7 @@
 }
 .process-card img:hover {
     background-color: greenyellow;
+}
+.text-colored {
+    color: tomato;
 }

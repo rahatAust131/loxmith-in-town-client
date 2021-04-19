@@ -1,0 +1,7 @@
+.review-card {
+    background-color: dimgray;
+    color: whitesmoke
+}
+.review-container {
+    background: url('../../../images/review-bg.jpg');
+}
