@@ -10,7 +10,7 @@ const Services = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        const url = 'http://localhost:5054/services';
+        const url = 'https://sheltered-woodland-87438.herokuapp.com/services';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -22,7 +22,7 @@ const Services = () => {
     const history = useHistory();
     const [admins, setAdmins] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5054/admins';
+        const url = 'https://sheltered-woodland-87438.herokuapp.com/admins';
         fetch(url)
             .then(res => res.json())
             .then(data => {

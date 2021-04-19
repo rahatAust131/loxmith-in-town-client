@@ -9,7 +9,7 @@ const Checkout = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        const url = `http://localhost:5054/service/${id}`;
+        const url = `https://sheltered-woodland-87438.herokuapp.com/service/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data[0]))
@@ -23,7 +23,7 @@ const Checkout = () => {
             item: product
         }
 
-        fetch('http://localhost:5054/addServicesOfUser', {
+        fetch('https://sheltered-woodland-87438.herokuapp.com/addServicesOfUser', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'

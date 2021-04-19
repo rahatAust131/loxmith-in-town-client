@@ -12,7 +12,7 @@ const AddAdmin = () => {
             name: data.name,
             email: data.email
         }
-        fetch('http://localhost:5054/addAdmin', {
+        fetch('https://sheltered-woodland-87438.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'Content-type': 'Application/json'

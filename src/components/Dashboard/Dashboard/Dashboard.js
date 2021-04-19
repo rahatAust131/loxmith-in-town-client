@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        const url = 'http://localhost:5054/admins';
+        const url = 'https://sheltered-woodland-87438.herokuapp.com/admins';
         fetch(url)
             .then(res => res.json())
             .then(data => {
