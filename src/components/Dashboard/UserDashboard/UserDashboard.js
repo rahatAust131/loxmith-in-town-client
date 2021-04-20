@@ -1,5 +1,5 @@
 import React from 'react';
-import UserSideBar from './UserSideBar';
+import UserSideBar from './UserSideBar/UserSideBar';
 
 const UserDashboard = () => {
     return (

@@ -1,25 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../../App';
-import Navbar from '../Header/Navbar/Navbar';
 import './Services.css';
 
 const Services = () => {
 
     const [services, setServices] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
 
     useEffect(() => {
         const url = 'https://sheltered-woodland-87438.herokuapp.com/services';
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 setServices(data)
             })
     }, []);
 
     const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
+
     const [admins, setAdmins] = useState([]);
     useEffect(() => {
         const url = 'https://sheltered-woodland-87438.herokuapp.com/admins';
@@ -28,16 +29,24 @@ const Services = () => {
             .then(data => {
                 setAdmins(data)
             })
-    }, []);
+    });
 
     const handleBuyProduct = id => {
-        admins.map(admin => admin.email === loggedInUser.email ? alert('You are an admin') :
-            history.push(`/service/${id}`));
+        admins.map(admin => {
+            if (admin.email === loggedInUser.email) {
+                alert('You are an admin');
+                if (alert) {
+                    history.replace(from);
+                }
+            } else {
+                history.push(`/service/${id}`)
+            }
+            return 0;
+        });
     };
 
     return (
         <div className="row g-3">
-            <Navbar />
             {
                 services.map(service =>
                     <div className="col-md-4">

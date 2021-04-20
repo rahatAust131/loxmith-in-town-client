@@ -7,7 +7,6 @@ import './AddAdmin.css';
 const AddAdmin = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data);
         const newAdmin = {
             name: data.name,
             email: data.email

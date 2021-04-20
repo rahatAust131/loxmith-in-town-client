@@ -15,7 +15,7 @@ import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Reviews from "./components/HomePage/Reviews/Reviews";
 import AddAdmin from "./components/Dashboard/AdminDashboard/AddAdmin/AddAdmin";
 import AdminList from "./components/Dashboard/AdminDashboard/AdminList/AdminList";
-
+import AddReview from "./components/Dashboard/UserDashboard/AddReview/AddReview";
 export const UserContext = createContext();
 
 function App() {
@@ -55,6 +55,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/addAdmin">
             <AddAdmin />
+          </PrivateRoute>
+          <PrivateRoute path="/addReview">
+            <AddReview />
           </PrivateRoute>
         </Switch>
       </Router>

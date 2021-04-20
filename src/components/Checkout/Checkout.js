@@ -1,12 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { UserContext } from '../../App';
 import './Checkout.css';
+import PaymentProcess from './PayentProcess/PaymentProcess';
 
 const Checkout = () => {
     const { id } = useParams();
     const [product, setProduct] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
         const url = `https://sheltered-woodland-87438.herokuapp.com/service/${id}`;
@@ -15,49 +14,52 @@ const Checkout = () => {
             .then(data => setProduct(data[0]))
     }, [id]);
 
-    const handleCheckout = () => {
-        const orderDetails = {
-            name: loggedInUser.displayName,
-            email: loggedInUser.email,
-            time: new Date(),
-            item: product
-        }
+    // const handleCheckout = () => {
+    //     const orderDetails = {
+    //         name: loggedInUser.displayName,
+    //         email: loggedInUser.email,
+    //         time: new Date(),
+    //         item: product
+    //     }
 
-        fetch('https://sheltered-woodland-87438.herokuapp.com/addServicesOfUser', {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(orderDetails)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                // alert("Your Order has been Placed Successfully");
-            })
-            .catch(err => console.log('error', err))
-    };
+    //     fetch('https://sheltered-woodland-87438.herokuapp.com/addServicesOfUser', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(orderDetails)
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data);
+    //             // alert("Your Order has been Placed Successfully");
+    //         })
+    //         .catch(err => console.log('error', err))
+    // };
 
     return (
-        <div className="check-container">
-            <h2 className="checkout-heading">Checkout</h2>
-            <div>
-                <table className="table table-striped checkout-table">
-                    <thead>
-                        <tr >
-                            <th className="th" scope="col">Service Name</th>
-                            <th className="th" scope="col">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr >
-                            <td className=" td">{product.title}</td>
-                            <td className=" td">{product.description}</td>
-                        </tr>                        
-                    </tbody>
-                </table>
+        <div className="row g-3 container-fluid m-auto d-flex justify-content-center align-items-center">
+            <div className="col-md-6">
+                <div className="check-container container-fluid m-auto p-3">
+                    <table className="table table-striped checkout-table w-100">
+                        <thead>
+                            <tr>
+                                <th className="text-light w-25" scope="col">Service Name</th>
+                                <th className="text-light w-25" scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="text-light">{product.title}</td>
+                                <td className="text-light">{product.description}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <button onClick={handleCheckout} className="btn btn-success checkout-btn">Checkout</button>
+            <div className="col-md-6">
+                <PaymentProcess />
+            </div>
         </div>
     );
 };

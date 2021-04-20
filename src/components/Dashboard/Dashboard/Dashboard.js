@@ -8,7 +8,7 @@ import UserDashboard from '../UserDashboard/UserDashboard';
 const Dashboard = () => {
 
     const [admins, setAdmins] = useState([]);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [loggedInUser] = useContext(UserContext);
 
     useEffect(() => {
         const url = 'https://sheltered-woodland-87438.herokuapp.com/admins';

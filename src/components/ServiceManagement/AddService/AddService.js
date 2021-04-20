@@ -22,7 +22,7 @@ const AddService = () => {
         const {name, price, quantity, weight} = data;
         const productData = { name, price, quantity, weight, imageURL: imageURL };
 
-        const url = 'https://secret-citadel-75547.herokuapp.com/addProduct';
+        const url = 'https://secret-citadel-75547.herokuapp.com/addService';
         fetch(url, {
             method: 'POST',
             headers: { 'Content-type': 'Application/json' },
