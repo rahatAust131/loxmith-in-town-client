@@ -14,21 +14,28 @@ const AddService = () => {
         document.getElementById('service-file').value = "";
     };
 
-    const onSubmit = (data) => {
-        const { title , description } = data;
-        const serviceData = { title , description, imageURL: imageURL };
+    const onSubmit = data => {
+        const serviceData = { 
+            title: data.title,
+            description: data.description,
+            imageURL: imageURL
+        };
+        console.log(serviceData);
 
-        const url = 'https://secret-citadel-75547.herokuapp.com/addService';
-        fetch(url, {
+        fetch('https://sheltered-woodland-87438.herokuapp.com/addService', {
             method: 'POST',
             headers: { 'Content-type': 'Application/json' },
             body: JSON.stringify(serviceData)
         })
-            .then(res => console.log(res))
-            .then(data => {
-                if(data) {
+            .then(res => res.json())
+            .then(result => {
+                if(result) {
                     alert('Your Service Has Been Added to database');
-                    makeInputsEmpty();
+                    if(alert) {
+                        makeInputsEmpty();
+                    }
+                } else {
+                    alert("Sorry! Couldn't add the Service");
                 }
             })        
     };
@@ -47,12 +54,12 @@ const AddService = () => {
             <div className="col-md-3">
                 <AdminSideBar />
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 bg-warning">
                 <div className="form-container">
                     <form className="form-div" onSubmit={handleSubmit(onSubmit)}>
                         <input placeholder="Service Title or Name" {...register("title")} id="service-title" />
                         <br />
-                        <textarea className="w-75" placeholder="Description" {...register("description")} id="service-description" />
+                        <textarea className="w-100" placeholder="Description" {...register("description")} id="service-description" />
                         <br />
                         <input type="file" {...register("exampleRequired", { required: true })} onChange={handleImageUpload} id="service-file" />
                         {errors.exampleRequired && <span>This field is required</span>}

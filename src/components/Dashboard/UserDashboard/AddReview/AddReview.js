@@ -15,7 +15,8 @@ const AddReview = () => {
             name: data.name,
             review: data.description,
             starRating: data.rating
-        }
+        };
+        
         fetch('https://sheltered-woodland-87438.herokuapp.com/addReview', {
             method: 'POST',
             headers: {
@@ -48,12 +49,9 @@ const AddReview = () => {
                 <div className="col-md-9 review-form-container">
                     <form className="review-form" onSubmit={handleSubmit(onSubmit)}>
                         <input id="name-field" className="form-group" placeholder="Name" {...register("name")} />
-                        <br />
-                        <textarea id="description-field" className="form-group w-100" placeholder="Description" {...register("description", { required: true })} />
+                        <textarea id="description-field" className="form-group w-50" placeholder="Description" {...register("description", { required: true })} />
                         {errors.email && <span>This field is required</span>}
-                        <br />
                         <input id="rating-field" className="form-group" placeholder="Rate Our Service" {...register("rating")} />
-                        <br />
                         <input className="btn btn-info" defaultValue="Add Review" type="submit" />
                     </form>
                 </div>

@@ -18,20 +18,15 @@ const Dashboard = () => {
                 setAdmins(data)
             })
     }, []);
-
-    let userState = 0;
-    const checkAdminOrNot = () => {
-        admins.map(admin => admin.email === loggedInUser.email ? userState = 1
-            : userState = 2);
-    }
-    checkAdminOrNot();
+    
+    const checkAdmin = admins.filter(admin => admin.email === loggedInUser.email);
 
     return (
         <div>
             <Navbar />
             <hr />
             {
-                userState === 1 ? <AdminDashboard /> : <UserDashboard />
+                checkAdmin[0] ? <AdminDashboard /> : <UserDashboard />
             }
         </div>
     );
