@@ -51,7 +51,7 @@ const Services = () => {
                 services.map(service =>
                     <div className="col-md-4">
                         <div className="card h-100 service-card">
-                            <img src={service.imageURL} className="card-img-top" alt="..." />
+                            <img src={service.imageURL} className="card-img-top service-card-img" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{service.title}</h5>
                                 <p className="card-text">{service.description}</p>

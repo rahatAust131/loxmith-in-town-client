@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../../../App';
+import './AddReview.css';
 import Navbar from '../../../HomePage/Header/Navbar/Navbar';
 import UserSideBar from '../UserSideBar/UserSideBar';
 
@@ -48,7 +49,7 @@ const AddReview = () => {
                     <form className="review-form" onSubmit={handleSubmit(onSubmit)}>
                         <input id="name-field" className="form-group" placeholder="Name" {...register("name")} />
                         <br />
-                        <textarea id="description-field" className="form-group" placeholder="Description" {...register("description", { required: true })} />
+                        <textarea id="description-field" className="form-group w-100" placeholder="Description" {...register("description", { required: true })} />
                         {errors.email && <span>This field is required</span>}
                         <br />
                         <input id="rating-field" className="form-group" placeholder="Rate Our Service" {...register("rating")} />

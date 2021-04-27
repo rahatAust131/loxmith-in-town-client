@@ -25,14 +25,14 @@ const AdminList = () => {
                     <table className="table table-striped admin-table">
                         <thead>
                             <tr >
-                                <th className="th" scope="col">Admin's Name</th>
-                                <th className="th" scope="col">Admin's Email Address</th>
+                                <th scope="col">Admin's Name</th>
+                                <th scope="col">Admin's Email Address</th>
                             </tr>
                         </thead>
                         <tbody>
                             {admins.map(admin => <tr >
-                                <td className=" td">{admin.name}</td>
-                                <td className=" td">{admin.email}</td>
+                                <td >{admin.name}</td>
+                                <td >{admin.email}</td>
                             </tr>)}
                         </tbody>
                     </table>

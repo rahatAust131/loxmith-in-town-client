@@ -11,6 +11,11 @@
 .service-card {
     background-color: darkmagenta;
     color: whitesmoke;
+    overflow: hidden;
+    transition: all 0.45s ease-in-out;
+}
+.service-card:hover {
+    background-color: darkgray;
 }
 .service-card h5 {
     color: cyan;
@@ -18,4 +23,11 @@
 .order-btn:hover {
     background-color: darkorchid;
     color: whitesmoke;
+}
+.service-card-img {
+    transition: all 1.5s ease-in;
+    
+}
+.service-card-img:hover {
+    transform: rotate(360deg);
 }
